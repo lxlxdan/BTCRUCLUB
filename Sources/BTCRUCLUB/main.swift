@@ -3,7 +3,7 @@ import Publish
 import Plot
 
 // This type acts as the configuration for your website.
-struct LxlxdanGithubIo: Website {
+struct BTCRUCLUB: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
         case posts
@@ -15,13 +15,11 @@ struct LxlxdanGithubIo: Website {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://your-website-url.com")!
-    var name = "LxlxdanGithubIo"
-    var description = "A description of LxlxdanGithubIo"
+    var name = "BTCRUCLUB"
+    var description = "A description of BTCRUCLUB"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
 
-try LxlxdanGithubIo().publish(
-     withTheme: .foundation,
-     deployedUsing: .gitHub("lxlxdan/BTCRUCLUB")
-)
+// This will generate your website using the built-in Foundation theme:
+try BTCRUCLUB().publish(withTheme: .foundation)

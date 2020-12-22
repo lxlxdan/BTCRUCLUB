@@ -3,11 +3,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "LxlxdanGithubIo",
+    name: "BTCRUCLUB",
     products: [
         .executable(
-            name: "LxlxdanGithubIo",
-            targets: ["LxlxdanGithubIo"]
+            name: "BTCRUCLUB",
+            targets: ["BTCRUCLUB"]
         )
     ],
     dependencies: [
@@ -15,7 +15,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "LxlxdanGithubIo",
+            name: "BTCRUCLUB",
             dependencies: ["Publish"]
         )
     ]
