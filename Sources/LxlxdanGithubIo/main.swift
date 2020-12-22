@@ -21,8 +21,7 @@ struct LxlxdanGithubIo: Website {
     var imagePath: Path? { nil }
 }
 
-try LxlxdanGithubIo().publish(using: [
-    .deploy(using: .gitHub("lxlxdan/BTCRUCLUB")),
-    .generateHTML(withTheme: .foundation)
-])
-
+try LxlxdanGithubIo().publish(
+     withTheme: .foundation,
+     deployedUsing: .gitHub("lxlxdan/BTCRUCLUB")
+)
