@@ -22,7 +22,7 @@ struct LxlxdanGithubIo: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try LxlxdanGithubIo().publish(withTheme: .foundation)
-try LxlxdanGithubIo().publish(using: [
-    .deploy(using: .gitHub("lxlxdan/lxlxdan.github.io", useSSH: false))
-])
+try LxlxdanGithubIo().publish(
+     withTheme: .foundation,
+     deployedUsing: .gitHub("lxlxdan/BTCRUCLUB")
+ )
