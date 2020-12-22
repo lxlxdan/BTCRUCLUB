@@ -21,8 +21,6 @@ struct LxlxdanGithubIo: Website {
     var imagePath: Path? { nil }
 }
 
-// This will generate your website using the built-in Foundation theme:
-try LxlxdanGithubIo().publish(
-     withTheme: .foundation,
-     deployedUsing: .gitHub("lxlxdan/BTCRUCLUB")
- )
+try LxlxdanGithubIo().publish(using: [
+    .deploy(using: .gitHub("lxlxdan/BTCRUCLUB", useSSH: false))
+])
