@@ -22,6 +22,6 @@ struct LxlxdanGithubIo: Website {
 }
 
 try LxlxdanGithubIo().publish(
-      withTheme: .foundation,
+     withTheme: .foundation,
      deployedUsing: .gitHub("lxlxdan/BTCRUCLUB")
- )
+)
