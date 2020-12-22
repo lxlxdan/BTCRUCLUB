@@ -20,8 +20,9 @@ struct LxlxdanGithubIo: Website {
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
-try LxlxdanGithubIo().publish(withTheme: .foundation)
 
 try LxlxdanGithubIo().publish(using: [
-    .deploy(using: .gitHub("lxlxdan/BTCRUCLUB"))
+    .deploy(using: .gitHub("lxlxdan/BTCRUCLUB")),
+    .generateHTML(withTheme: .foundation)
 ])
+
