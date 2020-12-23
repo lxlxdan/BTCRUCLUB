@@ -22,8 +22,9 @@ struct BTCRUCLUB: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try AbesPodcast().publish(
+try BTCRUCLUB().publish(
   withTheme: .foundation,
   additionalSteps: [
     .deploy(using: .gitHub("lxlxdan/BTCRUCLUB"))
   ]
+)
