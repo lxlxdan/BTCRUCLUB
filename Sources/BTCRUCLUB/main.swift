@@ -22,4 +22,3 @@ struct BTCRUCLUB: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try BTCRUCLUB().publish(withTheme: .foundation)

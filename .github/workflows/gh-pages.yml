@@ -1,31 +1,24 @@
-name: Github Pages
+name: Build and Deploy MyWebsite
 
 on:
   push:
     branches:
-    - master
+      - master
 
 jobs:
-  gh-pages:
-    runs-on: ubuntu-latest
-    container:
-      image: "swift:5.2"
+  build-and-deploy:
+    runs-on: ubuntu-18.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-        
-    - name: Build Publish
-      run: |
-        git clone https://github.com/JohnSundell/Publish.git
-        cd Publish
-        make
-
-    - name: Generate Site
-      run: publish generate
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./Output
+      - name: Checkout Source
+        uses: actions/checkout@v1
+      - name: Build Site
+        run: swift run BTCRUCLUB
+      - name: Deploy Content
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
+          EXTERNAL_REPOSITORY: lxlxdan/BTCRUCLUB
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./Output
+        with:
+          commitMessage: ${{ github.event.head_commit.message }}
